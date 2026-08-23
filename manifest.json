@@ -1,0 +1,9 @@
+{
+  "name": "Flow Wallet",
+  "short_name": "Flow",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0c09",
+  "theme_color": "#0d0c09",
+  "description": "A modern digital wallet interface."
+}

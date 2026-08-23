@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d0c09">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<title>Flow</title>
+</head>
+<body>
+
+<div id="splash" class="splash">
+  <div class="splash-mark">
+    <svg viewBox="0 0 100 100" width="68" height="68"><path d="M20 15 Q20 15 70 15 Q85 15 85 32 Q85 48 70 48 L38 48 L38 85" fill="none" stroke="url(#g)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g" x1="0" y1="0" x2="100" y2="100"><stop offset="0" style="stop-color:var(--accent)"/><stop offset="1" stop-color="#f4eee0"/></linearGradient></defs></svg>
+  </div>
+  <div class="splash-word">Flow</div>
+  <div class="splash-tag">Balances, plainly kept</div>
+</div>
+
+<div id="app" class="app hidden">
+
+  <!-- HOME -->
+  <main id="homeMain" class="screen hidden">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">Good to see you</span>
+        <h1 id="homeGreeting">Hi there</h1>
+      </div>
+      <div class="top-actions">
+        <button class="icon-circle" id="notificationsBtn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" width="19" height="19"><path d="M6 10.5a6 6 0 0 1 12 0c0 3.4.9 5.4 1.7 6.5.4.5 0 1.3-.6 1.3H4.9c-.6 0-1-.8-.6-1.3.8-1.1 1.7-3.1 1.7-6.5Z"/><path d="M9.5 20a2.6 2.6 0 0 0 5 0"/></svg>
+        </button>
+        <button class="icon-circle" id="profileBtn" aria-label="Settings">
+          <svg viewBox="0 0 24 24" width="19" height="19"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V19.5a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H4.5a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H10a1.7 1.7 0 0 0 1-1.55V4.5a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V10a1.7 1.7 0 0 0 1.55 1H19.5a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="setup-card" id="setupCard">
+      <div class="setup-ring">
+        <svg viewBox="0 0 44 44" width="44" height="44">
+          <circle cx="22" cy="22" r="19" fill="none" stroke="var(--surface-2)" stroke-width="4"/>
+          <circle cx="22" cy="22" r="19" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.4" stroke-dashoffset="39.8" transform="rotate(-90 22 22)"/>
+        </svg>
+        <span>2/3</span>
+      </div>
+      <div class="setup-copy">
+        <b>Set up your account</b>
+        <span>Get the most out of Flow.</span>
+      </div>
+    </section>
+
+    <section class="balance-card accent-fill">
+      <div class="balance-top">
+        <div class="balance-mark">
+          <svg viewBox="0 0 100 100" width="20" height="20"><path d="M20 15 Q20 15 70 15 Q85 15 85 32 Q85 48 70 48 L38 48 L38 85" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div id="balance" class="balance">$0.00</div>
+        <button id="toggleBalance" class="eye-btn">◉</button>
+      </div>
+      <div class="balance-label">Checking account</div>
+    </section>
+
+    <section class="balance-card savings-card" id="savingsCard">
+      <div class="balance-top">
+        <div class="balance-mark">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M3 11h18"/><circle cx="12" cy="15.2" r="1.4" fill="currentColor" stroke="none"/><path d="M7 7V6a5 5 0 0 1 10 0v1"/></svg>
+        </div>
+        <div id="savingsBalanceDisplay" class="balance">$0.00</div>
+        <span class="eye-btn" aria-hidden="true">›</span>
+      </div>
+      <div class="balance-label">Savings account</div>
+    </section>
+
+    <button class="topup-row" id="homeTopupBtn"><span>＋</span> Top up balance</button>
+
+    <section class="card-section">
+      <div class="section-head"><h2>Recent activity</h2><button class="small-btn" id="seeAllBtn">See more</button></div>
+      <div id="activityPreview" class="transactions"></div>
+    </section>
+  </main>
+
+  <div class="action-bar" id="homeActionBar">
+    <button data-action="send" class="action-pill dark">Pay</button>
+    <button data-action="request" class="action-pill dark">Get paid</button>
+  </div>
+
+  <!-- ACTIVITY FULL -->
+  <main id="activityMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="home">← Back</button>
+    <h1 class="page-title">Activity</h1>
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="sent">Sent</button>
+      <button class="filter" data-filter="received">Received</button>
+      <button class="filter" data-filter="topup">Top ups</button>
+      <button class="filter" data-filter="transfer">Transfers</button>
+      <input id="searchTx" placeholder="Search" />
+    </div>
+    <div id="transactions" class="transactions"></div>
+  </main>
+
+  <!-- SEND -->
+  <main id="sendMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="home">← Back</button>
+    <h1 class="page-title">Send money</h1>
+    <div class="field"><label>Send to</label>
+      <div class="quick" id="sendDestPicker">
+        <button type="button" class="src-btn active" data-dest="bank">🏦 Bank account</button>
+        <button type="button" class="src-btn" data-dest="savings">🐷 My savings</button>
+      </div>
+    </div>
+    <div id="sendBankFields">
+      <div class="field"><label>Bank name</label>
+        <input id="sendBankName" placeholder="e.g. GTBank" autocomplete="off">
+      </div>
+      <div class="field"><label>Account number</label>
+        <input id="sendAccountNumber" placeholder="0123456789" inputmode="numeric" autocomplete="off">
+      </div>
+      <div class="field"><label>Account name</label>
+        <input id="sendAccountName" placeholder="Beneficiary name" autocomplete="off">
+      </div>
+    </div>
+    <div class="field"><label>Amount</label>
+      <div class="amount-input"><span id="sendCurrencySym">$</span><input id="sendAmount" inputmode="decimal" placeholder="0.00"></div>
+    </div>
+    <div class="field"><label>Description (optional)</label><input id="sendNote" placeholder="What's it for?"></div>
+    <button class="primary" id="sendContinueBtn">Continue</button>
+  </main>
+
+  <!-- REQUEST -->
+  <main id="requestMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="home">← Back</button>
+    <h1 class="page-title">Request money</h1>
+    <div class="field"><label>From</label>
+      <input id="requestFrom" placeholder="Name or @handle" autocomplete="off">
+    </div>
+    <div class="field"><label>Amount</label>
+      <div class="amount-input"><span id="requestCurrencySym">$</span><input id="requestAmount" inputmode="decimal" placeholder="0.00"></div>
+    </div>
+    <div class="field"><label>Note (optional)</label><input id="requestNote" placeholder="What's it for?"></div>
+    <button class="primary" id="requestSendBtn">Send request</button>
+  </main>
+
+  <!-- TOP UP -->
+  <main id="topupMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="home">← Back</button>
+    <h1 class="page-title">Top up balance</h1>
+    <div class="field"><label>From</label>
+      <div class="quick" id="topupSourcePicker">
+        <button type="button" class="src-btn active" data-src="bank">🏦 Bank account</button>
+        <button type="button" class="src-btn" data-src="card">💳 Debit card</button>
+      </div>
+    </div>
+    <div class="field"><label>Amount</label>
+      <div class="amount-input"><span id="topupCurrencySym">$</span><input id="topupAmount" inputmode="decimal" placeholder="0.00"></div>
+    </div>
+    <div class="quick-amounts">
+      <button data-amt="20">$20</button><button data-amt="50">$50</button><button data-amt="100">$100</button><button data-amt="250">$250</button>
+    </div>
+    <button class="primary" id="topupContinueBtn">Continue</button>
+  </main>
+
+  <!-- SAVINGS -->
+  <main id="savingsMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="home">← Back</button>
+    <h1 class="page-title">Savings</h1>
+    <section class="balance-card accent-fill" style="text-align:center">
+      <div class="balance-label" style="margin:0 0 8px">Savings balance</div>
+      <div id="savingsDetailBalance" class="balance" style="font-size:32px">$0.00</div>
+    </section>
+    <div class="field"><label>Amount to withdraw</label>
+      <div class="amount-input"><span id="withdrawCurrencySym">$</span><input id="withdrawAmount" inputmode="decimal" placeholder="0.00"></div>
+    </div>
+    <button class="primary" id="withdrawContinueBtn">Withdraw to checking</button>
+  </main>
+
+  <!-- PASSCODE CONFIRM SHEET -->
+  <div id="pinSheet" class="sheet hidden">
+    <div class="sheet-backdrop" id="pinSheetBackdrop"></div>
+    <div class="sheet-panel">
+      <div class="sheet-handle"></div>
+      <div class="confirm-summary" id="confirmSummary"></div>
+      <h2 class="confirm-title">Enter passcode to confirm</h2>
+      <div class="pin-field" id="confirmPinField">
+        <div class="dots" id="confirmDots"><span></span><span></span><span></span><span></span></div>
+        <input id="confirmInput" class="pin-hidden-input" type="tel" inputmode="numeric" maxlength="4" autocomplete="off" />
+      </div>
+      <div class="lock-error hidden" id="confirmError">Incorrect passcode</div>
+    </div>
+  </div>
+
+  <!-- STATUS (pending/success) -->
+  <main id="statusMain" class="screen hidden status-page">
+    <button class="small-btn back-btn status-back hidden" id="statusBackBtn">← Back</button>
+    <div id="statusBody" class="status-body"></div>
+  </main>
+  <div id="statusActions" class="status-actions hidden">
+    <button class="primary" id="statusDoneBtn">Done</button>
+  </div>
+
+  <!-- TX DETAIL -->
+  <main id="txDetailMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="activity">← Back</button>
+    <section class="card-section" id="txDetailContent" style="margin-top:0"></section>
+  </main>
+
+  <!-- PROFILE -->
+  <main id="profileMain" class="screen hidden">
+    <button class="small-btn back-btn" data-back="home">← Back</button>
+    <section class="balance-card" style="text-align:center">
+      <div class="avatar" style="margin:0 auto 14px;width:64px;height:64px;font-size:24px;display:grid;place-items:center;background:#fff;color:var(--accent)">F</div>
+      <h2 id="profileHeaderName" style="margin:0 0 2px;font-family:var(--font-display);font-weight:600;font-style:italic">Flow Member</h2>
+      <p style="color:var(--muted);font-size:12px;margin:0;font-family:var(--font-mono)" id="profileHandle">@flow-member</p>
+    </section>
+
+    <section class="card-section">
+      <div class="section-head"><h2>Account</h2></div>
+      <div class="field"><label>Display name</label><input id="profileName" value="Flow Member"></div>
+      <div class="field"><label>Handle</label><input id="profileHandleInput" value="@flow-member"></div>
+      <button class="primary" id="saveProfileBtn">Save profile</button>
+    </section>
+
+    <section class="card-section">
+      <div class="section-head"><h2>Preferences</h2></div>
+      <button class="add-money" id="themeToggleBtn">Switch to light mode</button>
+      <button class="add-money" id="notifToggleBtn">Enable notifications</button>
+      <div class="field">
+        <label>Currency</label>
+        <div class="quick" id="currencySwatches">
+          <button type="button" class="accent-swatch" data-currency="USD">$ USD</button>
+          <button type="button" class="accent-swatch" data-currency="GBP">£ GBP</button>
+          <button type="button" class="accent-swatch" data-currency="EUR">€ EUR</button>
+          <button type="button" class="accent-swatch" data-currency="NGN">₦ NGN</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Accent color</label>
+        <div class="quick" id="accentSwatches">
+          <button type="button" class="accent-swatch" data-accent="navy" style="--sw:#3b6dff">Navy</button>
+          <button type="button" class="accent-swatch" data-accent="steel" style="--sw:#5a7ba6">Steel</button>
+          <button type="button" class="accent-swatch" data-accent="coral" style="--sw:#ff6b6b">Coral</button>
+          <button type="button" class="accent-swatch" data-accent="gold" style="--sw:#f5c542">Gold</button>
+          <button type="button" class="accent-swatch" data-accent="blue" style="--sw:#3b82f6">Blue</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-section">
+      <div class="section-head"><h2>Security</h2></div>
+      <button class="add-money" id="changePasscodeBtn">Change passcode</button>
+    </section>
+
+    <section class="card-section">
+      <div class="section-head"><h2>Data</h2></div>
+      <button class="add-money" id="clearHistoryBtn" style="border-color:#f17d8a55;color:var(--danger)">Clear transaction history</button>
+      <button class="add-money" id="resetAppBtn" style="border-color:#f17d8a55;color:var(--danger)">Reset app</button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav active" data-nav="home">
+      <svg viewBox="0 0 24 24"><path d="M3 11.5L12 4l9 7.5"/><path d="M5.5 10v9a1 1 0 0 0 1 1h4v-6h3v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      <small>Home</small>
+    </button>
+    <button class="nav" data-nav="activity">
+      <svg viewBox="0 0 24 24"><path d="M4 6.5h16"/><path d="M4 12h16"/><path d="M4 17.5h10"/></svg>
+      <small>Activity</small>
+    </button>
+    <button class="nav" data-nav="profile">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.4-4 4-6 7.5-6s6.1 2 7.5 6"/></svg>
+      <small>Profile</small>
+    </button>
+  </nav>
+</div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
